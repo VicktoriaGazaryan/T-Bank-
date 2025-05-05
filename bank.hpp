@@ -13,7 +13,7 @@ struct Account {
 };
 
 struct Bank {
-    Account* accounts; 
+     Account accounts[2 * N];
 };
 
 #endif 
