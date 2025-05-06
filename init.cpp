@@ -14,7 +14,7 @@ int main() {
         return 1;
     }
 
-    size_t size = sizeof(Bank) + 2 * N * sizeof(Account);
+    size_t size = sizeof(Bank) + N * sizeof(Account);
     if (ftruncate(fd, size) == -1) {
         perror("ftruncate");
         return 1;
@@ -31,7 +31,7 @@ int main() {
 
     init_bank(bank);
 
-    std::cout << "Bank initialized with 2*N accounts.\n";
+    std::cout << "Bank initialized with N accounts.\n";
 
     munmap(ptr, size);
     close(fd);
